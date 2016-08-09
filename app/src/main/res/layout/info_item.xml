@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:padding="15dp" >
+
+    <com.example.reactivemvp.view.TextViewPlus
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/nameTextView"
+        style="@style/CustomStyle"
+        tools:text="@string/app_name"
+        android:lines="1"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/nameTextView"
+        android:id="@+id/salaryTextView"
+        android:textAppearance="@style/Text.SalaryStyle"
+        tools:text="$1,000,000"
+        android:lines="1"
+    />
+
+</RelativeLayout>

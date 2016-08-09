@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ReactiveMvp</string>
+    <string name="grid_view">Grid</string>
+    <string name="list_view">List</string>
+    <string name="error_msg">Unable to load data from internet. We\'ll try again for you &#8230;</string>
+</resources>

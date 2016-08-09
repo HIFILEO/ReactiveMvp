@@ -1,0 +1,68 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.example.reactivemvp"
+        minSdkVersion 23
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    compile 'com.android.support:appcompat-v7:' + rootProject.ext.supportV7Version
+    compile 'com.android.support:support-annotations:' + rootProject.ext.supportVersion
+    compile 'com.android.support:design:' + rootProject.ext.supportVersion
+    compile 'com.android.support:recyclerview-v7:' + rootProject.ext.supportV7Version
+    compile 'com.jakewharton:butterknife:' + rootProject.ext.butterknifeVersion
+    compile 'com.jakewharton.timber:timber:4.1.2'
+
+    //Dagger
+    compile 'com.google.dagger:dagger:' + rootProject.ext.daggerVersion
+    apt 'com.google.dagger:dagger-compiler:' + rootProject.ext.daggerVersion
+    provided 'javax.annotation:jsr250-api:1.0'
+
+    //okhttp
+    compile 'com.squareup.okhttp3:okhttp:' + rootProject.ext.okhttpVersion
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:' + rootProject.ext.okhttpVersion
+    compile 'com.squareup.okhttp3:logging-interceptor:' + rootProject.ext.okhttpVersion
+    compile 'com.squareup.okio:okio:' + rootProject.ext.okioVersion
+
+    //Retrofit
+    compile('com.squareup.retrofit2:retrofit:' + rootProject.ext.retrofitVersion) {
+        //exclude Retrofit's Okhttp peer-dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+    compile 'com.squareup.retrofit2:converter-gson:' + rootProject.ext.retrofitVersion
+    compile 'com.squareup.retrofit2:adapter-rxjava:' + rootProject.ext.retrofitVersion
+
+    //Rx
+    compile 'io.reactivex:rxandroid:' + rootProject.ext.reactiveXAndroidVersion
+    compile 'io.reactivex:rxjava:' + rootProject.ext.reactiveXVersion
+
+    //Unit Test
+    testCompile 'junit:junit:' + rootProject.ext.junitVersion
+    testCompile 'org.apache.maven:maven-ant-tasks:2.1.3'
+    testCompile 'org.robolectric:robolectric:' + rootProject.ext.robolectricVersion
+    testCompile 'org.robolectric:shadows-support-v4:3.0'
+    testCompile 'org.mockito:mockito-core:' + rootProject.ext.mockitoVersion
+    testCompile 'com.android.support:support-annotations:' + rootProject.ext.supportVersion
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    testCompile 'org.assertj:assertj-core:1.7.1'
+    testCompile('com.squareup.assertj:assertj-android:1.1.1') {
+        exclude module: 'support-annotations'
+    }
+}
