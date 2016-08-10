@@ -7,15 +7,15 @@ the external UI or external data.
 The app simply loads a list of Game Of Throne Characters from a JSON hosting website and displays that information to the
 screen in a list and grid format. 
 
-![Alt text](/doc/list_ui.png?raw=true "JSON" =250x250)
-![Alt text](/doc/grid_ui.png?raw=true "JSON" =250x250)
+![Alt text](/doc/list_ui.png?raw=true "JSON")
+![Alt text](/doc/grid_ui.png?raw=true "JSON")
 
 The following two end points will be discussed:
 
 1. https://api.myjson.com/bins/18vxt
 2. https://api.myjson.com/bins/2lsth
 
-![Alt text](/doc/json_data_screenshot.png?raw=true "JSON" =250x250)
+![Alt text](/doc/json_data_screenshot.png?raw=true "JSON")
 
 The application architecture is as followed: 
 ![Alt text](/doc/Reactive_MVP.png?raw=true "App MVP Architecture")
