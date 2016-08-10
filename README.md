@@ -11,7 +11,8 @@ The following two end points will be discussed:
 https://api.myjson.com/bins/18vxt
 https://api.myjson.com/bins/2lsth
 
-The application architecture is as followed: TBD image.
+The application architecture is as followed: 
+![Alt text](/doc/Reactive_MVP.png?raw=true "App MVP Architecture")
 
 ## Usage
 
