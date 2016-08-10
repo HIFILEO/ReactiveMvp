@@ -8,7 +8,7 @@ The app simply loads a list of Game Of Throne Characters from a JSON hosting web
 screen in a list and grid format. 
 
 ![Alt text](/doc/list_ui.png?raw=true "JSON")
-![Alt text](/doc/grid_ui.png?raw=true "JSON")
+![Alt text](/doc/grid_ui2.png?raw=true "JSON")
 
 The following two end points will be discussed:
 
