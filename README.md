@@ -15,7 +15,7 @@ The following two end points will be discussed:
 1. https://api.myjson.com/bins/18vxt
 2. https://api.myjson.com/bins/2lsth
 
-![Alt text](/doc/json_data_screenshot.png?raw=true "JSON")
+![Alt text](/doc/json_data_screenshot2.png?raw=true "JSON")
 
 The application architecture is as followed: 
 ![Alt text](/doc/Reactive_MVP.png?raw=true "App MVP Architecture")
