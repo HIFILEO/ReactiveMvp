@@ -39,3 +39,6 @@ This project supports the following type of tests:
 To run all unit tests:
 
 ./gradlew testDebugUnitTest
+
+To run all integration tests:
+./gradlew integrationTest '-Pintegration=true'

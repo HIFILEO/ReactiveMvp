@@ -1,5 +1,6 @@
 package com.example.reactivemvp;
 
+import com.example.reactivemvp.categories.UnitTest;
 import com.example.reactivemvp.gateway.InfoGateway;
 import com.example.reactivemvp.gateway.InfoGatewayWebImpl;
 import com.example.reactivemvp.model.Info;
@@ -10,6 +11,7 @@ import com.example.reactivemvp.service.InfoWeb;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.mockito.Mock;
 
 import java.util.List;
@@ -25,6 +27,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 /**
  * Test the InfoGatewayWebImpl
  */
+@Category(UnitTest.class)
 public class InfoGatewayWebImpTest extends RxBaseTest {
     InfoGateway infoGateway;
 

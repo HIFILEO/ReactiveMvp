@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
+def integrationTests = false
+
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -16,6 +18,51 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        //include the integration test folder
+        test.java.srcDirs +=  file('src/integrationTest/java')
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnit()
+            if (integrationTests.toBoolean()) {
+                println "Integration Tests Only for " + it.name
+                options {
+                    excludeCategories 'com.example.reactivemvp.categories.UnitTest'
+                }
+            } else {
+                println "Unit Tests Only for " + it.name
+                options {
+                    excludeCategories 'com.example.reactivemvp.categories.IntegrationTest'
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Gradle task to run only integration tests that were flagged with specific category.
+ */
+task integrationTest(
+        type: Test,
+        description: 'Run integration tests only. Pass in \'-Pintegration=true\'',
+        dependsOn: ['testDebugUnitTest', 'clean'] ) {
+
+    //Here for task completion, not actually used since sub task of testDebugUnitTest
+    testClassesDir = file("src/integrationTest/java/");
+    classpath = files("$System.env.ANDROID_HOME/sources/android-18")
+
+    //
+    //Turn on integration testing when argument exists and is true
+    //
+    if (project.hasProperty('integration')) {
+        println integration
+        if (integration == 'true') {
+            integrationTests = true
         }
     }
 }

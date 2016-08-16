@@ -1,5 +1,6 @@
 package com.example.reactivemvp;
 
+import com.example.reactivemvp.categories.IntegrationTest;
 import com.example.reactivemvp.service.InfoResponseWeb;
 import com.example.reactivemvp.service.InfoServiceApi;
 import com.example.reactivemvp.service.InfoWeb;
@@ -7,6 +8,7 @@ import com.google.gson.Gson;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -14,6 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import rx.observers.TestSubscriber;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -24,6 +27,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
  * NOTE - THIS IS AN INTEGRATION TEST. YOUR GRADLE TEST SUITE SHOULD BE ALTERED TO ONLY RUN THIS TEST IN THAT
  * ENVIRONMENT. THIS IS HERE ONLY AS AN EXAMPLE OF HOW YOU TEST AN ENDPOINT.
  */
+@Category(IntegrationTest.class)
 public class InfoServiceApiTest extends RxBaseTest {
     InfoServiceApi infoServiceApi;
 
@@ -74,5 +78,7 @@ public class InfoServiceApiTest extends RxBaseTest {
         assertEquals("Lannister", infoWeb.getLastName());
         assertEquals("M", infoWeb.getSex());
         assertEquals(1000000, infoWeb.getSalary());
+
+        assertFalse(true);
     }
 }

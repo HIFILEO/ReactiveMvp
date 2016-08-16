@@ -3,8 +3,11 @@ package com.example.reactivemvp;
 import android.support.annotation.CallSuper;
 import android.support.annotation.VisibleForTesting;
 
+import com.example.reactivemvp.categories.UnitTest;
+
 import org.junit.After;
 import org.junit.Before;
+import org.junit.experimental.categories.Category;
 
 import rx.Scheduler;
 import rx.android.plugins.RxAndroidPlugins;
@@ -17,6 +20,7 @@ import rx.schedulers.TestScheduler;
 /**
  * Base class for RX Testing.
  */
+@Category(UnitTest.class)
 public abstract class RxBaseTest {
     @VisibleForTesting
     protected TestScheduler testScheduler;

@@ -1,5 +1,6 @@
 package com.example.reactivemvp;
 
+import com.example.reactivemvp.categories.UnitTest;
 import com.example.reactivemvp.interactor.InfoInteractor;
 import com.example.reactivemvp.model.DisplayInfo;
 import com.example.reactivemvp.model.Info;
@@ -10,6 +11,7 @@ import com.example.reactivemvp.presenter.InfoViewModel;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 
@@ -24,6 +26,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 /**
  * Test the InfoPresenter
  */
+@Category(UnitTest.class)
 public class InfoPresenterTest extends RxBaseTest {
     InfoPresenter infoPresenter;
     InfoPresenterImpl infoPresenterImpl;

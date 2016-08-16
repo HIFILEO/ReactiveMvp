@@ -1,5 +1,6 @@
 package com.example.reactivemvp;
 
+import com.example.reactivemvp.categories.UnitTest;
 import com.example.reactivemvp.gateway.InfoGateway;
 import com.example.reactivemvp.interactor.InfoInteractor;
 import com.example.reactivemvp.interactor.InfoInteractorImpl;
@@ -8,6 +9,7 @@ import com.example.reactivemvp.model.Info;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.mockito.Mock;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 /**
  * Test the InfoInteractor
  */
+@Category(UnitTest.class)
 public class InfoInteractorTest extends RxBaseTest {
     InfoInteractor infoInteractor;
     InfoInteractorImpl infoInteractorImpl;
